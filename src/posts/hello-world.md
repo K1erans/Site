@@ -10,6 +10,6 @@ Welcome to my blog! This is my first post.
 
 ## What to expect
 
-I'll be writing about things I find interesting — software, projects, ideas.
+In this blog I will be writing about my current interests, projects and more! 
 
-Stay tuned.
+Stay tuned :)
