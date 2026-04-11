@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import About from "./About";
 import Blog from "./Blog";
+import BlogPost from "./BlogPost";
 import Projects from "./Project";
 
 function Home() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/projects" element={<Projects />} />
     </Routes>
   );
