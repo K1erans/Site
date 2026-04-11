@@ -7,11 +7,13 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <section className="page-layout">
+      <div className="toggle-corner">
+        <ThemeToggle />
+      </div>
       <div className="page-layout-topbar">
         <button className="back-btn" onClick={() => navigate("/")}>
           ← Back
         </button>
-        <ThemeToggle />
       </div>
       <main className="body">{children}</main>
       <Footer />
