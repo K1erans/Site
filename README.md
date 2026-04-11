@@ -1,75 +1,60 @@
-# React + TypeScript + Vite
+# Personal Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kieran's personal site built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript**
+- **Vite 8** — dev server and bundler
+- **React Router v7** — client-side routing
+- **react-markdown** — renders blog posts written in Markdown
 
-## React Compiler
+## Pages
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+| Route | Description |
+|---|---|
+| `/` | Home — name and nav links |
+| `/about` | Bio, skills, and experience |
+| `/blog` | Blog index — lists all posts |
+| `/blog/:slug` | Renders a Markdown post |
+| `/projects` | Projects |
 
-Note: This will impact Vite dev & build performances.
+## Writing a blog post
 
-## Expanding the ESLint configuration
+Create a `.md` file in `src/posts/`. The filename becomes the URL slug.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```md
+---
+title: My Post Title
+date: 2026-04-11
+description: A short summary shown on the blog index.
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Your Markdown content goes here.
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+`src/posts/my-post.md` is published at `/blog/my-post`. Posts are sorted newest-first by the `date` field.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Theming
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+A `☀ / ☾` toggle in the top-right corner switches between light and dark mode. The preference is saved to `localStorage` and defaults to the OS setting on first visit.
+
+| | Light | Dark |
+|---|---|---|
+| Background | `#fafafa` | `#121212` |
+| Text | `#151515` | `#f0f0f0` |
+| Accent / hover | `#ff0022` | `#89CFF0` |
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
 ```
