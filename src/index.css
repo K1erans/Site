@@ -1,3 +1,29 @@
+/* ── Colour tokens ── */
+:root {
+    --bg:           #fafafa;
+    --text:         #151515;
+    --text-muted:   #555;
+    --text-subtle:  #888;
+    --text-faint:   #aaa;
+    --border:       #e5e5e5;
+    --tag-bg:       #f5f5f5;
+    --tag-text:     #333;
+    --accent:       #ff0022;
+}
+
+html.dark {
+    --bg:           #121212;
+    --text:         #f0f0f0;
+    --text-muted:   #b0b0b0;
+    --text-subtle:  #888;
+    --text-faint:   #666;
+    --border:       #2a2a2a;
+    --tag-bg:       #1e1e1e;
+    --tag-text:     #ccc;
+    --accent:       #89CFF0;
+}
+
+/* ── Reset ── */
 html,
 body,
 #root {
@@ -7,9 +33,10 @@ body,
 }
 
 body {
-    background-color: #fafafa;
-    color: #151515;
+    background-color: var(--bg);
+    color: var(--text);
 }
+
 * {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
@@ -26,6 +53,7 @@ h6 {
     font-family: "Playfair Display", serif;
 }
 
+/* ── Home layout ── */
 .layout {
     min-height: 100vh;
     width: 100%;
@@ -56,7 +84,7 @@ h6 {
 .header p {
     font-style: italic;
     font-size: 1.05rem;
-    color: #444;
+    color: var(--text-muted);
 }
 
 .leftSide nav {
@@ -71,12 +99,12 @@ h6 {
     font-size: 1.5rem;
     font-weight: 400;
     text-decoration: none;
-    color: #151515;
+    color: var(--text);
     transition: color 0.2s ease;
 }
 
 .leftSide nav a:hover {
-    color: #ff0022;
+    color: var(--accent);
 }
 
 .footer {
@@ -86,17 +114,17 @@ h6 {
     width: 100%;
     text-align: center;
     font-size: 1rem;
-    color: #bbb;
+    color: var(--text-subtle);
 }
 
 .footer a,
 .footer span {
-    color: #919191;
+    color: var(--text-subtle);
     text-decoration: none;
 }
 
 .footer a:hover {
-    color: #ff0022;
+    color: var(--accent);
 }
 
 .body {
@@ -110,10 +138,10 @@ h6 {
 
 /* Active nav link */
 .leftSide nav a.nav-active {
-    color: #ff0022;
+    color: var(--accent);
 }
 
-/* ── Sub-page layout (no sidebar/header) ── */
+/* ── Sub-page layout ── */
 .page-layout {
     min-height: 100vh;
     display: flex;
@@ -131,14 +159,13 @@ h6 {
     cursor: pointer;
     font-family: "Inter", sans-serif;
     font-size: 0.9rem;
-    color: #888;
+    color: var(--text-subtle);
     padding: 0;
-    margin-bottom: 2rem;
     transition: color 0.2s ease;
 }
 
 .back-btn:hover {
-    color: #ff0022;
+    color: var(--accent);
 }
 
 /* ── Shared page wrapper ── */
@@ -152,7 +179,7 @@ h6 {
 .page h2 {
     font-size: 1.6rem;
     font-weight: 700;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--border);
     padding-bottom: 0.5rem;
     margin-bottom: 0.25rem;
 }
@@ -161,7 +188,7 @@ h6 {
 .about-hero p {
     font-size: 1rem;
     line-height: 1.75;
-    color: #444;
+    color: var(--text-muted);
     max-width: 560px;
 }
 
@@ -183,7 +210,7 @@ h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #888;
+    color: var(--text-subtle);
 }
 
 .skill-tags {
@@ -195,10 +222,10 @@ h6 {
 .tag {
     font-size: 0.85rem;
     padding: 0.25rem 0.65rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 4px;
-    color: #333;
-    background: #f5f5f5;
+    color: var(--tag-text);
+    background: var(--tag-bg);
 }
 
 .experience-list {
@@ -208,7 +235,7 @@ h6 {
 }
 
 .exp-item {
-    border-left: 2px solid #e5e5e5;
+    border-left: 2px solid var(--border);
     padding-left: 1rem;
 }
 
@@ -227,19 +254,19 @@ h6 {
 
 .exp-period {
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-subtle);
     white-space: nowrap;
 }
 
 .exp-company {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 0.15rem;
 }
 
 .exp-desc {
     font-size: 0.9rem;
-    color: #444;
+    color: var(--text-muted);
     margin-top: 0.4rem;
     line-height: 1.6;
 }
@@ -256,7 +283,7 @@ h6 {
     flex-direction: column;
     gap: 0.25rem;
     padding: 1rem;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border);
     border-radius: 6px;
     text-decoration: none;
     color: inherit;
@@ -264,7 +291,7 @@ h6 {
 }
 
 .post-item:hover {
-    border-color: #ff0022;
+    border-color: var(--accent);
 }
 
 .post-item h3 {
@@ -275,12 +302,12 @@ h6 {
 
 .post-item p {
     font-size: 0.875rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .post-date {
     font-size: 0.75rem;
-    color: #aaa;
+    color: var(--text-faint);
     font-family: "Inter", sans-serif;
 }
 
@@ -296,7 +323,7 @@ h6 {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border);
     border-radius: 6px;
     text-decoration: none;
     color: inherit;
@@ -304,7 +331,7 @@ h6 {
 }
 
 .project-card:hover {
-    border-color: #ff0022;
+    border-color: var(--accent);
 }
 
 .project-card h3 {
@@ -315,7 +342,7 @@ h6 {
 
 .project-desc {
     font-size: 0.83rem;
-    color: #555;
+    color: var(--text-muted);
     flex: 1;
     line-height: 1.5;
 }
@@ -323,7 +350,7 @@ h6 {
 .project-lang {
     font-size: 0.78rem;
     font-weight: 600;
-    color: #555;
+    color: var(--text-muted);
     margin-top: auto;
     padding-top: 0.5rem;
 }
@@ -333,7 +360,7 @@ h6 {
     align-items: center;
     gap: 0.75rem;
     font-size: 0.8rem;
-    color: #777;
+    color: var(--text-subtle);
 }
 
 .stat {
@@ -343,6 +370,38 @@ h6 {
 }
 
 .muted {
-    color: #999;
+    color: var(--text-subtle);
     font-size: 0.9rem;
+}
+
+/* ── Theme toggle ── */
+.toggle-corner {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-subtle);
+    padding: 0.3rem 0.55rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    line-height: 1;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.page-layout-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
