@@ -82,6 +82,7 @@ export default function About() {
                 </div>
                 <p className="exp-company">{edu.location}</p>
                 <span className="exp-desc">{edu.subject}</span>
+                {"    "}
                 <span className="exp-desc">{edu.level}</span>
               </div>
             ))}
