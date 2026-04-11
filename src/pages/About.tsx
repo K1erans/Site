@@ -17,8 +17,9 @@ const Education = [
   {
     institution: "University of Chester",
     location: "Douglas, Isle of Man",
+    subject: "Computer Science",
+    level: "Bachelors of Science(Bsc)",
     period: "2024 – 2027",
-    description: "Studied Computer Science at the University of Chester.",
   },
 ];
 
@@ -80,7 +81,8 @@ export default function About() {
                   <span className="exp-period">{edu.period}</span>
                 </div>
                 <p className="exp-company">{edu.location}</p>
-                <p className="exp-desc">{edu.description}</p>
+                <p className="exp-desc">{edu.subject}</p>
+                <p className="exp-desc">{edu.level}</p>
               </div>
             ))}
           </div>
