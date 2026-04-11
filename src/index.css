@@ -113,6 +113,34 @@ h6 {
     color: #ff0022;
 }
 
+/* ── Sub-page layout (no sidebar/header) ── */
+.page-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.back-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+    padding: 0;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ff0022;
+}
+
 /* ── Shared page wrapper ── */
 .page {
     display: flex;

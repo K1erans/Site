@@ -20,8 +20,11 @@ const posts: Post[] = [
   },
 ];
 
+import PageLayout from "../components/PageLayout";
+
 export default function Blog() {
   return (
+    <PageLayout>
     <div className="page">
       <h2>Blog</h2>
       {posts.length === 0 ? (
@@ -44,5 +47,6 @@ export default function Blog() {
         </div>
       )}
     </div>
+    </PageLayout>
   );
 }

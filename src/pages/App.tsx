@@ -6,21 +6,24 @@ import About from "./About";
 import Blog from "./Blog";
 import Projects from "./Project";
 
-function App() {
+function Home() {
   return (
     <section className="layout">
       <Header />
       <Sidebar />
-      <main className="body">
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/" element={<About />} />
-        </Routes>
-      </main>
       <Footer />
     </section>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/projects" element={<Projects />} />
+    </Routes>
   );
 }
 

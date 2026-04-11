@@ -19,8 +19,11 @@ const experience = [
   },
 ];
 
+import PageLayout from "../components/PageLayout";
+
 export default function About() {
   return (
+    <PageLayout>
     <div className="page">
       <section className="about-hero">
         <h2>About Me</h2>
@@ -64,5 +67,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </PageLayout>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PageLayout from "../components/PageLayout";
 
 interface Repo {
   id: number;
@@ -56,25 +57,31 @@ export default function Projects() {
 
   if (loading)
     return (
-      <div className="page">
-        <p className="muted">Loading projects...</p>
-      </div>
+      <PageLayout>
+        <div className="page">
+          <p className="muted">Loading projects...</p>
+        </div>
+      </PageLayout>
     );
   if (error)
     return (
-      <div className="page">
-        <p className="muted">{error}</p>
-      </div>
+      <PageLayout>
+        <div className="page">
+          <p className="muted">{error}</p>
+        </div>
+      </PageLayout>
     );
 
   return (
-    <div className="page">
-      <h2>Projects</h2>
-      <div className="project-grid">
-        {repos.map((repo) => (
-          <ProjectCard key={repo.id} repo={repo} />
-        ))}
+    <PageLayout>
+      <div className="page">
+        <h2>Projects</h2>
+        <div className="project-grid">
+          {repos.map((repo) => (
+            <ProjectCard key={repo.id} repo={repo} />
+          ))}
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
