@@ -7,7 +7,7 @@ const skills: Record<string, string[]> = {
 const experience = [
   {
     role: "Tesco Colleague",
-    company: "Tesco",
+    company: "Tesco, Douglas, Isle of Man",
     period: "2021 – Present",
     description: "Tesco Colleague whilst studing for my Computer Science Bsc.",
   },
