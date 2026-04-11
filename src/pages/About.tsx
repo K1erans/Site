@@ -81,8 +81,8 @@ export default function About() {
                   <span className="exp-period">{edu.period}</span>
                 </div>
                 <p className="exp-company">{edu.location}</p>
-                <p className="exp-desc">{edu.subject}</p>
-                <p className="exp-desc">{edu.level}</p>
+                <span className="exp-desc">{edu.subject}</span>
+                <span className="exp-desc">{edu.level}</span>
               </div>
             ))}
           </div>
