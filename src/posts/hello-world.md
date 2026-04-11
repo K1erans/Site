@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2026-04-11
-description: My first blog post — a quick introduction.
+description: My first blog post! A quick introduction.
 ---
 
 # Hello World
