@@ -2,7 +2,11 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import ThemeToggle from "./ThemeToggle";
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
+export default function PageLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const navigate = useNavigate();
 
   return (

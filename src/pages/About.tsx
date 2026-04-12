@@ -1,7 +1,7 @@
 const skills: Record<string, string[]> = {
-  Languages: ["TypeScript", "JavaScript", "Python", "HTML", "CSS"],
+  Languages: ["TypeScript/Javascript", "C#", "Python", "C"],
   Frameworks: ["React", "Node.js", "Express", "Vite"],
-  Tools: ["Git", "Docker", "Linux", "VS Code"],
+  Tools: ["Git", "Docker", "Claude"],
 };
 
 const experience = [
@@ -30,12 +30,7 @@ export default function About() {
       <div className="page">
         <section className="about-hero">
           <h2>About Me</h2>
-          <p>
-            Hi, I'm Kieran — a developer based in Douglas, Isle of Man. I build
-            things for the web and enjoy working on projects that are both
-            well-designed and technically interesting. Replace this with your
-            own intro.
-          </p>
+          <p>I like tech.</p>
         </section>
 
         <section className="about-section">
