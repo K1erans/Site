@@ -10,7 +10,7 @@ export default function Blog() {
   const visiblePosts =
     activeFilter === "All"
       ? allPosts
-      : allPosts.filter((post) => post.category === activeFilter);
+      : allPosts.filter((post) => post.categories.includes(activeFilter));
 
   return (
     <PageLayout>
@@ -53,7 +53,13 @@ export default function Blog() {
                     <span className="post-date">{post.date}</span>
                     <h3>{post.title}</h3>
                     <p>{post.description}</p>
-                    <span className="post-category">{post.category}</span>
+                    <div className="post-categories">
+                      {post.categories.map((category) => (
+                        <span key={category} className="post-category">
+                          {category}
+                        </span>
+                      ))}
+                    </div>
                   </Link>
                 ))}
               </div>

@@ -28,6 +28,7 @@ Create a `.md` file in `src/posts/`. The filename becomes the URL slug.
 title: My Post Title
 date: 2026-04-11
 description: A short summary shown on the blog index.
+categories: Education, Projects
 ---
 
 Your Markdown content goes here.

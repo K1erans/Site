@@ -335,6 +335,13 @@ h6 {
     font-family: "Inter", sans-serif;
 }
 
+.post-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+}
+
 .post-category {
     width: fit-content;
     font-size: 0.75rem;
@@ -342,7 +349,6 @@ h6 {
     color: var(--text-subtle);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-top: 0.35rem;
 }
 
 /* ── Projects ── */

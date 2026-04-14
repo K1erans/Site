@@ -3,7 +3,7 @@ export interface PostMeta {
   title: string;
   date: string;
   description: string;
-  category: string;
+  categories: string[];
 }
 
 export interface Post extends PostMeta {
@@ -26,6 +26,15 @@ function parseFrontmatter(raw: string): { meta: Record<string, string>; content:
   return { meta, content: match[2] };
 }
 
+function parseCategories(meta: Record<string, string>): string[] {
+  const rawCategories = meta.categories ?? meta.category ?? "misc";
+
+  return rawCategories
+    .split(",")
+    .map((category) => category.trim())
+    .filter(Boolean);
+}
+
 export const allPosts: PostMeta[] = Object.entries(modules)
   .map(([path, raw]) => {
     const slug = path.replace(/^.*\//, "").replace(/\.md$/, "");
@@ -35,7 +44,7 @@ export const allPosts: PostMeta[] = Object.entries(modules)
       title: meta.title ?? slug,
       date: meta.date ?? "",
       description: meta.description ?? "",
-      category: meta.category ?? "misc",
+      categories: parseCategories(meta),
     };
   })
   .sort((a, b) => b.date.localeCompare(a.date)); // newest first
@@ -52,7 +61,7 @@ export function getPost(slug: string): Post | undefined {
     title: meta.title ?? slug,
     date: meta.date ?? "",
     description: meta.description ?? "",
-    category: meta.category ?? "misc",
+    categories: parseCategories(meta),
     content,
   };
 }
