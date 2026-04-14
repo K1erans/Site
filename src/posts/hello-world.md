@@ -2,6 +2,7 @@
 title: Hello World
 date: 04-11-26
 description: My first blog post! A quick introduction.
+category: misc
 ---
 
 # Hello World

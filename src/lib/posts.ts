@@ -3,6 +3,7 @@ export interface PostMeta {
   title: string;
   date: string;
   description: string;
+  category: string;
 }
 
 export interface Post extends PostMeta {
@@ -34,6 +35,7 @@ export const allPosts: PostMeta[] = Object.entries(modules)
       title: meta.title ?? slug,
       date: meta.date ?? "",
       description: meta.description ?? "",
+      category: meta.category ?? "misc",
     };
   })
   .sort((a, b) => b.date.localeCompare(a.date)); // newest first
@@ -50,6 +52,7 @@ export function getPost(slug: string): Post | undefined {
     title: meta.title ?? slug,
     date: meta.date ?? "",
     description: meta.description ?? "",
+    category: meta.category ?? "misc",
     content,
   };
 }
