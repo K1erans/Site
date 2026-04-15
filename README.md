@@ -38,7 +38,7 @@ Your Markdown content goes here.
 
 ## Theming
 
-A `☀ / ☾` toggle in the top-right corner switches between light and dark mode. The preference is saved to `localStorage` and defaults to the OS setting on first visit.
+A `☀ / ☾` toggle in the top-right corner switches between light and dark mode. The preference is saved to `localStorage` and defaults to light mode on first visit.
 
 | | Light | Dark |
 |---|---|---|
