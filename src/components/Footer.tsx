@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       @{year}{" "}
       <a href="https://www.linkedin.com/in/kierankearney10/">Kieran Kearney</a>{" "}
-      <span>: Douglas, IM</span>
+      <span>: Douglas, Isle of Man</span>
     </footer>
   );
 }
