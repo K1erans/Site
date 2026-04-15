@@ -1,7 +1,10 @@
-import { useParams, Link } from "react-router-dom";
-import Markdown from "react-markdown";
+import { lazy, Suspense } from "react";
+import { Link, useParams } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import { getPost } from "../lib/posts";
+import { loadMarkdownContent } from "./blogPostLoader";
+
+const MarkdownContent = lazy(loadMarkdownContent);
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -23,7 +26,9 @@ export default function BlogPost() {
       <div className="page">
         <Link to="/blog" className="muted">← Back to blog</Link>
         <span className="post-date">{post.date}</span>
-        <Markdown>{post.content}</Markdown>
+        <Suspense fallback={<p className="muted">Loading post content...</p>}>
+          <MarkdownContent content={post.content} />
+        </Suspense>
       </div>
     </PageLayout>
   );

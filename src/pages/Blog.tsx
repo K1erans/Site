@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import { allPosts } from "../lib/posts";
+import { preloadBlogPostRoute } from "./blogPostLoader";
 
 const filters = ["Education", "Projects", "misc"] as const;
 
@@ -49,6 +50,8 @@ export default function Blog() {
                     key={post.slug}
                     to={`/blog/${post.slug}`}
                     className="post-item"
+                    onMouseEnter={preloadBlogPostRoute}
+                    onFocus={preloadBlogPostRoute}
                   >
                     <span className="post-date">{post.date}</span>
                     <h3>{post.title}</h3>
